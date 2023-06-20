@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "gYeXlsJKxUyTgfI37dS7iEgn5jiFylCy/zcb0ZD10gjw143FAYhJKsT/auD3l3cAaXsMqMrq5aYmL+X6HKK0ng==",
+  "dgSpecHash": "+iDsVs6T4QZ0biwKwAPrITlePizrHFPCE1QqlijEfcZLP6K4ampuHAIHPtKsJJcW1a8pnVZ6+FJvuoowYgKxvw==",
   "success": true,
-  "projectFilePath": "D:\\projetos\\pos\\meu_menu\\apiUsuario\\src\\MeuMenu.Domain\\MeuMenu.Domain.csproj",
+  "projectFilePath": "C:\\Projects\\Pós\\MeuMenuApiUsuario\\src\\MeuMenu.Domain\\MeuMenu.Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

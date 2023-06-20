@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "g4kWwnssgm0OIEMshFREqG4t0/0AZdwcSCJU1mILDv9Z4MXy88kII1zjeBzowwAf8tC6jujA1rrJSKMAoFrq1g==",
+  "dgSpecHash": "iWkIA5/RGHJ1E52tyyZuUao1uEMe3aqVCB7ZbYtlzULMtIj9nI+1FKzqVwJe4BRQdPoRMJgnCUTOetRsd8H8EQ==",
   "success": true,
-  "projectFilePath": "D:\\projetos\\pos\\meu_menu\\apiUsuario\\src\\MeuMenu.Infra.Data\\MeuMenu.Infra.Data.csproj",
+  "projectFilePath": "C:\\Projects\\Pós\\MeuMenuApiUsuario\\src\\MeuMenu.Infra.Data\\MeuMenu.Infra.Data.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

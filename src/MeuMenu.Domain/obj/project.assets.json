@@ -8,26 +8,19 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\fabiomeyra\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Matheus\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\projetos\\pos\\meu_menu\\apiUsuario\\src\\MeuMenu.Domain\\MeuMenu.Domain.csproj",
+      "projectUniqueName": "C:\\Projects\\Pós\\MeuMenuApiUsuario\\src\\MeuMenu.Domain\\MeuMenu.Domain.csproj",
       "projectName": "MeuMenu.Domain",
-      "projectPath": "D:\\projetos\\pos\\meu_menu\\apiUsuario\\src\\MeuMenu.Domain\\MeuMenu.Domain.csproj",
-      "packagesPath": "C:\\Users\\fabiomeyra\\.nuget\\packages\\",
-      "outputPath": "D:\\projetos\\pos\\meu_menu\\apiUsuario\\src\\MeuMenu.Domain\\obj\\",
+      "projectPath": "C:\\Projects\\Pós\\MeuMenuApiUsuario\\src\\MeuMenu.Domain\\MeuMenu.Domain.csproj",
+      "packagesPath": "C:\\Users\\Matheus\\.nuget\\packages\\",
+      "outputPath": "C:\\Projects\\Pós\\MeuMenuApiUsuario\\src\\MeuMenu.Domain\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\fabiomeyra\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\Matheus\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -35,7 +28,8 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {},
+        "https://pkgs.dev.azure.com/wizsolucoes/_packaging/WizCross/nuget/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
@@ -58,7 +52,8 @@
           "net47",
           "net471",
           "net472",
-          "net48"
+          "net48",
+          "net481"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -67,7 +62,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
       }
     }
   }

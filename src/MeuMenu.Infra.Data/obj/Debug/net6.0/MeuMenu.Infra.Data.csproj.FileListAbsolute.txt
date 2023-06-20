@@ -10,3 +10,15 @@ D:\projetos\pos\meu_menu\apiUsuario\src\MeuMenu.Infra.Data\obj\Debug\net6.0\MeuM
 D:\projetos\pos\meu_menu\apiUsuario\src\MeuMenu.Infra.Data\obj\Debug\net6.0\MeuMenu.Infra.Data.dll
 D:\projetos\pos\meu_menu\apiUsuario\src\MeuMenu.Infra.Data\obj\Debug\net6.0\ref\MeuMenu.Infra.Data.dll
 D:\projetos\pos\meu_menu\apiUsuario\src\MeuMenu.Infra.Data\obj\Debug\net6.0\MeuMenu.Infra.Data.pdb
+C:\Projects\Pós\MeuMenuApiUsuario\src\MeuMenu.Infra.Data\bin\Debug\net6.0\MeuMenu.Infra.Data.deps.json
+C:\Projects\Pós\MeuMenuApiUsuario\src\MeuMenu.Infra.Data\bin\Debug\net6.0\MeuMenu.Infra.Data.dll
+C:\Projects\Pós\MeuMenuApiUsuario\src\MeuMenu.Infra.Data\bin\Debug\net6.0\MeuMenu.Infra.Data.pdb
+C:\Projects\Pós\MeuMenuApiUsuario\src\MeuMenu.Infra.Data\obj\Debug\net6.0\MeuMenu.Infra.Data.csproj.AssemblyReference.cache
+C:\Projects\Pós\MeuMenuApiUsuario\src\MeuMenu.Infra.Data\obj\Debug\net6.0\MeuMenu.Infra.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projects\Pós\MeuMenuApiUsuario\src\MeuMenu.Infra.Data\obj\Debug\net6.0\MeuMenu.Infra.Data.AssemblyInfoInputs.cache
+C:\Projects\Pós\MeuMenuApiUsuario\src\MeuMenu.Infra.Data\obj\Debug\net6.0\MeuMenu.Infra.Data.AssemblyInfo.cs
+C:\Projects\Pós\MeuMenuApiUsuario\src\MeuMenu.Infra.Data\obj\Debug\net6.0\MeuMenu.Infra.Data.csproj.CoreCompileInputs.cache
+C:\Projects\Pós\MeuMenuApiUsuario\src\MeuMenu.Infra.Data\obj\Debug\net6.0\MeuMenu.Infra.Data.dll
+C:\Projects\Pós\MeuMenuApiUsuario\src\MeuMenu.Infra.Data\obj\Debug\net6.0\refint\MeuMenu.Infra.Data.dll
+C:\Projects\Pós\MeuMenuApiUsuario\src\MeuMenu.Infra.Data\obj\Debug\net6.0\MeuMenu.Infra.Data.pdb
+C:\Projects\Pós\MeuMenuApiUsuario\src\MeuMenu.Infra.Data\obj\Debug\net6.0\ref\MeuMenu.Infra.Data.dll
