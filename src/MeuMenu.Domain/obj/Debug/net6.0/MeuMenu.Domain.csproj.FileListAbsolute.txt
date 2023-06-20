@@ -1,0 +1,12 @@
+D:\projetos\pos\meu_menu\apiUsuario\src\MeuMenu.Domain\bin\Debug\net6.0\MeuMenu.Domain.deps.json
+D:\projetos\pos\meu_menu\apiUsuario\src\MeuMenu.Domain\bin\Debug\net6.0\MeuMenu.Domain.dll
+D:\projetos\pos\meu_menu\apiUsuario\src\MeuMenu.Domain\bin\Debug\net6.0\ref\MeuMenu.Domain.dll
+D:\projetos\pos\meu_menu\apiUsuario\src\MeuMenu.Domain\bin\Debug\net6.0\MeuMenu.Domain.pdb
+D:\projetos\pos\meu_menu\apiUsuario\src\MeuMenu.Domain\obj\Debug\net6.0\MeuMenu.Domain.csproj.AssemblyReference.cache
+D:\projetos\pos\meu_menu\apiUsuario\src\MeuMenu.Domain\obj\Debug\net6.0\MeuMenu.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\projetos\pos\meu_menu\apiUsuario\src\MeuMenu.Domain\obj\Debug\net6.0\MeuMenu.Domain.AssemblyInfoInputs.cache
+D:\projetos\pos\meu_menu\apiUsuario\src\MeuMenu.Domain\obj\Debug\net6.0\MeuMenu.Domain.AssemblyInfo.cs
+D:\projetos\pos\meu_menu\apiUsuario\src\MeuMenu.Domain\obj\Debug\net6.0\MeuMenu.Domain.csproj.CoreCompileInputs.cache
+D:\projetos\pos\meu_menu\apiUsuario\src\MeuMenu.Domain\obj\Debug\net6.0\MeuMenu.Domain.dll
+D:\projetos\pos\meu_menu\apiUsuario\src\MeuMenu.Domain\obj\Debug\net6.0\ref\MeuMenu.Domain.dll
+D:\projetos\pos\meu_menu\apiUsuario\src\MeuMenu.Domain\obj\Debug\net6.0\MeuMenu.Domain.pdb

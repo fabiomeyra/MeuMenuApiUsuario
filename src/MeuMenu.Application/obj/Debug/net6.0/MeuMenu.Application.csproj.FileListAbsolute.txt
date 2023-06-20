@@ -1,0 +1,11 @@
+D:\projetos\pos\meu_menu\apiUsuario\src\MeuMenu.Application\bin\Debug\net6.0\MeuMenu.Application.deps.json
+D:\projetos\pos\meu_menu\apiUsuario\src\MeuMenu.Application\bin\Debug\net6.0\MeuMenu.Application.dll
+D:\projetos\pos\meu_menu\apiUsuario\src\MeuMenu.Application\bin\Debug\net6.0\ref\MeuMenu.Application.dll
+D:\projetos\pos\meu_menu\apiUsuario\src\MeuMenu.Application\bin\Debug\net6.0\MeuMenu.Application.pdb
+D:\projetos\pos\meu_menu\apiUsuario\src\MeuMenu.Application\obj\Debug\net6.0\MeuMenu.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\projetos\pos\meu_menu\apiUsuario\src\MeuMenu.Application\obj\Debug\net6.0\MeuMenu.Application.AssemblyInfoInputs.cache
+D:\projetos\pos\meu_menu\apiUsuario\src\MeuMenu.Application\obj\Debug\net6.0\MeuMenu.Application.AssemblyInfo.cs
+D:\projetos\pos\meu_menu\apiUsuario\src\MeuMenu.Application\obj\Debug\net6.0\MeuMenu.Application.csproj.CoreCompileInputs.cache
+D:\projetos\pos\meu_menu\apiUsuario\src\MeuMenu.Application\obj\Debug\net6.0\MeuMenu.Application.dll
+D:\projetos\pos\meu_menu\apiUsuario\src\MeuMenu.Application\obj\Debug\net6.0\ref\MeuMenu.Application.dll
+D:\projetos\pos\meu_menu\apiUsuario\src\MeuMenu.Application\obj\Debug\net6.0\MeuMenu.Application.pdb
