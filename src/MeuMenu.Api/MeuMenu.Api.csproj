@@ -11,7 +11,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <Folder Include="Controllers\Base\" />
+    <Folder Include="Helpers\" />
+    <Folder Include="Middlewares\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MeuMenu.Application\MeuMenu.Application.csproj" />
+    <ProjectReference Include="..\MeuMenu.CrossCutting\MeuMenu.CrossCutting.csproj" />
+    <ProjectReference Include="..\MeuMenu.Domain\MeuMenu.Domain.csproj" />
   </ItemGroup>
 
 </Project>
