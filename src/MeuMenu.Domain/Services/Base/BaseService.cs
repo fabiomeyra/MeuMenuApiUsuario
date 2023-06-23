@@ -32,7 +32,7 @@ public abstract class BaseService<T> : IBaseService<T> where T : class
     
     public virtual async Task<T> Atualizar(T objeto)
     {
-        return await _repository.Adicionar(objeto);
+        return await _repository.Atualizar(objeto);
     }
 
     public virtual async Task Excluir(T objeto)

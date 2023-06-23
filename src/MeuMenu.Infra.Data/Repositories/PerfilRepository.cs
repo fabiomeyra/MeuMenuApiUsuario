@@ -5,9 +5,10 @@ using MeuMenu.Infra.Data.Repositories.Base;
 
 namespace MeuMenu.Infra.Data.Repositories;
 
-public class UsuarioRepository : BaseRepository<Usuario>, IUsuarioRepository
+public class PerfilRepository : BaseRepository<Perfil>, IPerfilRepository
 {
-    public UsuarioRepository(MeuMenuUsuarioContext contexto) : base(contexto)
+    public PerfilRepository(MeuMenuUsuarioContext contexto) 
+        : base(contexto)
     {
     }
 }

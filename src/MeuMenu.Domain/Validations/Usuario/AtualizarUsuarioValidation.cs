@@ -3,7 +3,7 @@ using MeuMenu.Domain.Interfaces.Services;
 
 namespace MeuMenu.Domain.Validations.Usuario;
 
-public class AtualizarUsuarioValidation : AbstractValidator<Models.Usuario.Usuario>
+public class AtualizarUsuarioValidation : AbstractValidator<Models.Usuario>
 {
     private readonly IUsuarioService _usuarioService;
 
@@ -46,7 +46,7 @@ public class AtualizarUsuarioValidation : AbstractValidator<Models.Usuario.Usuar
             .WithMessage(RetornaMensagemFormatado(MensagensValidacaoResources.SenhaObrigatoria));
     }
 
-    private bool CamposObrigatoriosPreenchidos(Models.Usuario.Usuario usuario)
+    private bool CamposObrigatoriosPreenchidos(Models.Usuario usuario)
     {
         return
             !string.IsNullOrWhiteSpace(usuario.UsuarioNome)

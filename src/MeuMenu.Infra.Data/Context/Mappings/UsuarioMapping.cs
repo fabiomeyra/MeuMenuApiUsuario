@@ -1,4 +1,4 @@
-﻿using MeuMenu.Domain.Models.Usuario;
+﻿using MeuMenu.Domain.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -33,5 +33,8 @@ public class UsuarioMapping : IEntityTypeConfiguration<Usuario>
 
         builder.Property(x => x.DataAlteracao)
             .HasColumnType("datetime");
+
+        //  Table
+        builder.ToTable("Usuario", "Usuario");
     }
 }

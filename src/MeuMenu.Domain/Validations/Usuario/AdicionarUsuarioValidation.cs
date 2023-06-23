@@ -4,7 +4,7 @@ using MeuMenu.Domain.Interfaces.Services;
 
 namespace MeuMenu.Domain.Validations.Usuario;
 
-public class AdicionarUsuarioValidation : AbstractValidator<Models.Usuario.Usuario>
+public class AdicionarUsuarioValidation : AbstractValidator<Models.Usuario>
 {
     private readonly IUsuarioService _usuarioService;
 
@@ -29,9 +29,6 @@ public class AdicionarUsuarioValidation : AbstractValidator<Models.Usuario.Usuar
 
     private void ValidarCamposObrigatorios()
     {
-        RuleFor(x => x.UsuarioId)
-            .Must(x => x != Guid.Empty)
-            .WithMessage(RetornaMensagemFormatado(MensagensValidacaoResources.DeveInformarIdentificadorAtualizar));
 
         RuleFor(x => x.PerfilId)
             .Must(x => x is > 0 && Enum.IsDefined(typeof(PerfilEnum), x))
@@ -50,7 +47,7 @@ public class AdicionarUsuarioValidation : AbstractValidator<Models.Usuario.Usuar
             .WithMessage(RetornaMensagemFormatado(MensagensValidacaoResources.SenhaObrigatoria));
     }
 
-    private bool CamposObrigatoriosPreenchidos(Models.Usuario.Usuario usuario)
+    private bool CamposObrigatoriosPreenchidos(Models.Usuario usuario)
     {
         return
             !string.IsNullOrWhiteSpace(usuario.UsuarioNome)

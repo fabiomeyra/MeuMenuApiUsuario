@@ -1,5 +1,5 @@
 ﻿using MeuMenu.Domain.Interfaces.Services.Base;
-using MeuMenu.Domain.Models.Usuario;
+using MeuMenu.Domain.Models;
 
 namespace MeuMenu.Domain.Interfaces.Services;
 

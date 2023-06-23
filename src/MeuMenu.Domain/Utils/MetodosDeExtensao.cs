@@ -45,6 +45,14 @@ public static class MetodosDeExtensao
         return retorno;
     }
 
+    public static ICollection<(int Valor, string? Nome)> ParaListaDeSelecao<TEnum>(this TEnum @this) where TEnum : struct, Enum
+    {
+        var lista = from Enum e in Enum.GetValues(typeof(TEnum))
+            select (Valor: Convert.ToInt32(e), Nome: e.ObterDescricaoEnum());
+
+        return lista.ToList();
+    }
+
     public static string? ObterDescricaoEnum(this Enum enumValue)
     {
         var fieldInfo = enumValue.GetType().GetField(enumValue.ToString());

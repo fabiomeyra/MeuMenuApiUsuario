@@ -7,7 +7,7 @@ public abstract class BaseAppSettings
         if (valor == null) return null;
         try
         {
-            return ServicoDeCriptografia.Descriptografar(valor);
+            return ServicoDeCriptografiaStatic.Descriptografar(valor);
         }
         catch
         {

@@ -3,7 +3,7 @@ using MeuMenu.Domain.Models;
 
 namespace MeuMenu.Domain.Interfaces.Repositories;
 
-public interface IUsuarioRepository : IBaseRepository<Usuario>
+public interface IPerfilRepository : IBaseRepository<Perfil>
 {
     
 }

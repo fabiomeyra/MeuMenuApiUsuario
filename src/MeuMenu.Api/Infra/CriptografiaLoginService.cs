@@ -15,7 +15,7 @@ public class CriptografiaLoginService
     }
 
     /// <summary>
-    ///     Método responsável por Criptografar um valor passado como parâmetro com base na configuração de login
+    ///     Método responsável por Descriptografar um valor passado como parâmetro com base na configuração de login
     /// </summary>
     /// <param name="value"></param>
     /// <returns></returns>

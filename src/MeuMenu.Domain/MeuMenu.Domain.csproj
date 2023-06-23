@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <Folder Include="Interfaces\Context\" />
+    <Folder Include="Interfaces\Utilitarios\" />
     <Folder Include="Interfaces\Repositories\Base\" />
     <Folder Include="Enums\" />
     <Folder Include="Interfaces\Services\Base\" />

@@ -2,7 +2,7 @@
 
 namespace MeuMenu.Domain.Validations.Usuario;
 
-public class ExcluirUsuarioValidation : AbstractValidator<Models.Usuario.Usuario>
+public class ExcluirUsuarioValidation : AbstractValidator<Models.Usuario>
 {
 
     public ExcluirUsuarioValidation()

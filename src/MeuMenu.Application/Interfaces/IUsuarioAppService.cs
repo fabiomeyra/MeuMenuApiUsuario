@@ -4,9 +4,10 @@ namespace MeuMenu.Application.Interfaces;
 
 public interface IUsuarioAppService
 {
-    Task<ICollection<UsuarioViewModel>> BuscarTodos();
-    Task<UsuarioViewModel> Obter(Guid usuarioId);
-    Task<UsuarioViewModel> Adicionar(UsuarioViewModel usuarioVm);
-    Task<UsuarioViewModel> Atualizar(UsuarioViewModel usuarioVm);
+    Task<ICollection<UsuarioRetornoViewModel>> BuscarTodos();
+    Task<UsuarioRetornoViewModel> Obter(Guid usuarioId);
+    Task<UsuarioRetornoViewModel> Adicionar(UsuarioSalvarViewModel usuarioVm);
+    Task<UsuarioRetornoViewModel> Atualizar(UsuarioSalvarViewModel usuarioVm);
     Task Excluir(Guid usuarioId);
+    Task<UsuarioRetornoViewModel?> RealizarLogin(UsuarioLoginViewModel usuarioVm);
 }

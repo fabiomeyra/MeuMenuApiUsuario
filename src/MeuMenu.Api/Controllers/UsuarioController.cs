@@ -1,4 +1,5 @@
 ﻿using MeuMenu.Api.Controllers.Base;
+using MeuMenu.Api.Infra;
 using MeuMenu.Application.Interfaces;
 using MeuMenu.Application.ViewModels.Usuario;
 using MeuMenu.Domain.Interfaces.Notificador;
@@ -12,22 +13,41 @@ namespace MeuMenu.Api.Controllers;
 public class UsuarioController : BaseController
 {
     private readonly IUsuarioAppService _appService;
+    private readonly IPerfilAppService _perfilAppService;
+    private readonly CriptografiaLoginService _criptografiaLoginService;
 
-    public UsuarioController(INotificador notificador, IUsuarioAppService appService) 
+    public UsuarioController(
+        INotificador notificador, 
+        IUsuarioAppService appService, 
+        IPerfilAppService perfilAppService, 
+        CriptografiaLoginService criptografiaLoginService) 
         : base(notificador)
     {
         _appService = appService;
+        _perfilAppService = perfilAppService;
+        _criptografiaLoginService = criptografiaLoginService;
+    }
+
+    /// <summary>
+    /// Rota para buscar lista de perfis para lista de seleção
+    /// </summary>
+    /// <returns>Retorna lista de perfis usuário ou mensagem(s) de erro</returns>
+    [HttpGet("perfis-para-selecao")]
+    public IActionResult BuscaListaPerfisParaSelecao()
+    {
+        var retorno = _perfilAppService.BuscarParaSelecao();
+        return RespostaPadrao(retorno);
     }
 
     /// <summary>
     /// Rota para buscar usuário por id
     /// </summary>
-    /// <param name="usuarioId">Identificador do usuário</param>
+    /// <param name="id">Identificador do usuário</param>
     /// <returns>Retorna usuário buscado por id caso exista ou mensagem(s) de erro</returns>
     [HttpGet("{id:guid}")]
-    public async Task<IActionResult> Obter([FromRoute] Guid usuarioId)
+    public async Task<IActionResult> Obter([FromRoute] Guid id)
     {
-        var retorno = await _appService.Obter(usuarioId);
+        var retorno = await _appService.Obter(id);
         return RespostaPadrao(retorno);
     }
 
@@ -48,8 +68,10 @@ public class UsuarioController : BaseController
     /// <param name="usuario">Objeto a ser cadastrado</param>
     /// <returns>Usuario cadastrado acrescido de seu identificadr ou mensagem(s) de erro</returns>
     [HttpPost]
-    public async Task<IActionResult> Adicionar([FromBody] UsuarioViewModel usuario)
+    [Authorize(Roles = "ADMIN")]
+    public async Task<IActionResult> Adicionar([FromBody] UsuarioSalvarViewModel usuario)
     {
+        usuario = DescriptografarSenhas(usuario);
         var retorno = await _appService.Adicionar(usuario);
         return RespostaPadrao(retorno);
     }
@@ -60,8 +82,10 @@ public class UsuarioController : BaseController
     /// <param name="usuario">Objeto a ser atualizado</param>
     /// <returns>Usuario atualizado ou mensagem(s) de erro</returns>
     [HttpPut]
-    public async Task<IActionResult> Atualizar([FromBody] UsuarioViewModel usuario)
+    [Authorize(Roles = "ADMIN")]
+    public async Task<IActionResult> Atualizar([FromBody] UsuarioSalvarViewModel usuario)
     {
+        usuario = DescriptografarSenhas(usuario);
         var retorno = await _appService.Atualizar(usuario);
         return RespostaPadrao(retorno);
     }
@@ -69,12 +93,20 @@ public class UsuarioController : BaseController
     /// <summary>
     /// Rota para excluir um novo usuário
     /// </summary>
-    /// <param name="usuarioId">identificador do objeto a ser excluído</param>
+    /// <param name="id">identificador do objeto a ser excluído</param>
     /// <returns>Mensagem de erro ou mensagem(s) de erro</returns>
     [HttpDelete("{id:guid}")]
-    public async Task<IActionResult> Excluir([FromRoute] Guid usuarioId)
+    [Authorize(Roles = "ADMIN")]
+    public async Task<IActionResult> Excluir([FromRoute] Guid id)
     {
-        await _appService.Excluir(usuarioId);
+        await _appService.Excluir(id);
         return RespostaPadrao();
+    }
+
+    private UsuarioSalvarViewModel DescriptografarSenhas(UsuarioSalvarViewModel usuario)
+    {
+        usuario.UsuarioSenha = _criptografiaLoginService.Descriptografar(usuario.UsuarioSenha);
+        usuario.UsuarioSenhaConfirmacao = _criptografiaLoginService.Descriptografar(usuario.UsuarioSenhaConfirmacao);
+        return usuario;
     }
 }
