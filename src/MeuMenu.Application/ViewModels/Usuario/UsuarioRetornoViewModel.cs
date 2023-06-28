@@ -7,4 +7,5 @@ public class UsuarioRetornoViewModel
     public string? UsuarioLogin { get; set; }
     public int? PerfilId { get; set; }
     public string? PerfilDescricao { get; set; }
+    public string? Permissao { get; set; }
 }

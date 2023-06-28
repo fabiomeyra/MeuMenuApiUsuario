@@ -28,6 +28,8 @@ public class JwtService
     /// <returns></returns>
     public dynamic GerarToken(UsuarioRetornoViewModel usuario, PerfilViewModel perfil)
     {
+        usuario.Permissao = perfil.PerfilRole;
+
         var usuarioJson = JsonSerializer.Serialize(usuario, new JsonSerializerOptions
         {
             Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
@@ -46,7 +48,7 @@ public class JwtService
                 new Claim("Usuario", usuarioJson)
             });
 
-        if(!string.IsNullOrWhiteSpace(perfil.PerfilRole))
+        if(!string.IsNullOrWhiteSpace(perfil.PerfilRole)) 
             identity.AddClaim(new Claim(ClaimTypes.Role, perfil.PerfilRole));
 
         var securityToken = handler.CreateToken(new SecurityTokenDescriptor
