@@ -41,7 +41,7 @@ public class JwtService
         var tokenDataExpiracao = _appSettings.Jwt?.RetornaHoraExpiracaoToken();
 
         var identity = new ClaimsIdentity(
-            new GenericIdentity(usuario.UsuarioNome!, "User"),
+            new GenericIdentity(usuario.UsuarioLogin!, "User"),
             new []
             {
                 new Claim("Login", usuario.UsuarioLogin!),

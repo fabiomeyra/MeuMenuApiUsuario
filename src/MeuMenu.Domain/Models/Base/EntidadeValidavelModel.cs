@@ -11,16 +11,6 @@ public abstract class EntidadeValidavelModel<TE> where TE : class
 
     public Guid ObterGuidEntidade() => _entidadeValidavelId;
 
-    //private readonly ICollection<AbstractValidator<TE>> _validacoes = new List<AbstractValidator<TE>>();
-
-    //public EntidadeValidavelModel<TE> AdicionarValidacao(AbstractValidator<TE> validacao)
-    //{
-    //    _validacoes.Add(validacao);
-    //    return this;
-    //}
-
-    //public ICollection<AbstractValidator<TE>> ObterValidacoes() => _validacoes;
-
     public virtual TE LimparPropriedadesNavegacao()
     {
         return null!;

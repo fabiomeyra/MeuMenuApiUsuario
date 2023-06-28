@@ -1,5 +1,6 @@
 ﻿using System.Net;
 using System.Text.Json;
+using MeuMenu.Api.Infra;
 
 namespace MeuMenu.Api.Middlewares;
 
@@ -10,6 +11,7 @@ public class ExceptionHandlerMiddleware
 {
     private const string JsonContentType = "application/json";
     private readonly RequestDelegate _request;
+    private ApplicationInsightsCore? _appInsights;
 
     /// <summary>
     /// Inicializa uma nova instância <see cref="ExceptionHandlerMiddleware"/> class.
@@ -39,9 +41,14 @@ public class ExceptionHandlerMiddleware
 
     private async Task HandleExceptionAsync(HttpContext context, Exception exception)
     {
+        // obtém instância do app Insights 
+        _appInsights = context.RequestServices.GetService<ApplicationInsightsCore>();
+
         //exception.Ship(context);
         context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
         context.Response.ContentType = JsonContentType;
+
+        if (_appInsights is not null) _appInsights.AddException(context, exception);
 
         await context.Response.WriteAsync(
             JsonSerializer.Serialize(

@@ -9,6 +9,9 @@ using Microsoft.AspNetCore.Rewrite;
 using Microsoft.IdentityModel.Tokens;
 using System.Globalization;
 using System.Text.Json.Serialization;
+using Microsoft.ApplicationInsights.AspNetCore.Extensions;
+using Microsoft.ApplicationInsights.DependencyCollector;
+using Microsoft.ApplicationInsights.Extensibility;
 using AuthorizationMiddleware = MeuMenu.Api.Middlewares.AuthorizationMiddleware;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -48,7 +51,21 @@ builder.Services.AddSingleton<CriptografiaLoginService>();
 // add serviço Jwt
 builder.Services.AddSingleton<JwtService>();
 
+// add Applicaiton Insights
+if (configuracao?.ApplicationInsights?.ConnectionString != null)
+{
+    builder.Services.AddApplicationInsightsTelemetry(new ApplicationInsightsServiceOptions
+    {
+        ConnectionString = configuracao.ApplicationInsights.ConnectionString
+    });
+
+    builder.Services.ConfigureTelemetryModule<DependencyTrackingTelemetryModule>((module, _) => { module.EnableSqlCommandTextInstrumentation = true; });
+}
+
 builder.Services.AddSingleton<IAuthorizationMiddlewareResultHandler, AuthorizationMiddleware>();
+builder.Services.AddSingleton<ITelemetryInitializer, TelemetryInitializer>();
+builder.Services.AddSingleton<ApplicationInsightsCore>();
+builder.Services.AddSingleton<ResponseBodyStoringMiddleware>();
 
 builder.Services.AddAuthentication(opt =>
 {
@@ -119,6 +136,10 @@ app.UseSwagger();
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
+
+app.UseExceptionRequestBodyStringMiddleware();
+
+app.UseResponseBodyStoringMiddleware();
 
 // Adicionando Middleware para tratar exceções
 app.UseExceptionHandlerMiddleware();

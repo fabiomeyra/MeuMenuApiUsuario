@@ -1,6 +1,5 @@
-﻿using System.Diagnostics.CodeAnalysis;
-using System.Security.Cryptography;
-using MeuMenu.Domain.Interfaces.Utilitarios;
+﻿using MeuMenu.Domain.Interfaces.Utilitarios;
+using System.Diagnostics.CodeAnalysis;
 
 namespace MeuMenu.CrossCutting;
 

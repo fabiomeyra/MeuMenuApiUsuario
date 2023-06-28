@@ -1,8 +1,10 @@
 ﻿using MeuMenu.Domain.Interfaces.Utilitarios;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MeuMenu.Api.Controllers;
 
+[Authorize("Bearer")]
 [Route("api/help")]
 public class HelpController : ControllerBase
 {
@@ -15,6 +17,7 @@ public class HelpController : ControllerBase
 
     [HttpGet("criptografar")]
     [ApiExplorerSettings(IgnoreApi = true)]
+    [Authorize(Roles = "ADMIN")]
     public IActionResult Criptografar([FromBody] string valor)
     {
         var list = valor.Split("||");
@@ -28,6 +31,7 @@ public class HelpController : ControllerBase
 
     [HttpGet("descriptografar")]
     [ApiExplorerSettings(IgnoreApi = true)]
+    [Authorize(Roles = "ADMIN")]
     public IActionResult Descriptografar([FromBody] string valor)
     {
         // Request
