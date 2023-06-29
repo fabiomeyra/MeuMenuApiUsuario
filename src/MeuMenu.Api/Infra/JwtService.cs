@@ -66,6 +66,7 @@ public class JwtService
 
         return new
         {
+            User = usuario,
             AccessToken = token,
             ExpiresIn = tokenDataExpiracao,
             _appSettings.Jwt?.TokenType
