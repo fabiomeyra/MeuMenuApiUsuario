@@ -1,5 +1,6 @@
 ﻿using MeuMenu.Api.Controllers.Base;
 using MeuMenu.Api.Infra;
+using MeuMenu.Application.Filtros;
 using MeuMenu.Application.Interfaces;
 using MeuMenu.Application.ViewModels.Usuario;
 using MeuMenu.Domain.Interfaces.Notificador;
@@ -59,6 +60,18 @@ public class UsuarioController : BaseController
     public async Task<IActionResult> BuscarTodos()
     {
         var retorno = await _appService.BuscarTodos();
+        return RespostaPadrao(retorno);
+    }
+
+    /// <summary>
+    /// Rota para pesquisar usuários
+    /// </summary>
+    /// /// <param name="filtro">Filtro a ser aplicado na busca</param>
+    /// <returns>Retorna lista de usuários filtrados pelo valor passado no parâmetro filtro ou mensagem(s) de erro</returns>
+    [HttpGet("pesquisar")]
+    public async Task<IActionResult> Pesquisar([FromQuery] PesquisarUsuarioFiltroViewModel filtro)
+    {
+        var retorno = await _appService.Pesquisar(filtro);
         return RespostaPadrao(retorno);
     }
 

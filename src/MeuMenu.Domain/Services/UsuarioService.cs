@@ -1,16 +1,19 @@
-﻿using MeuMenu.Domain.Interfaces.Repositories;
+﻿using MeuMenu.Domain.Filtros;
+using MeuMenu.Domain.Interfaces.Repositories;
 using MeuMenu.Domain.Interfaces.Services;
 using MeuMenu.Domain.Interfaces.Utilitarios;
 using MeuMenu.Domain.Models;
 using MeuMenu.Domain.Services.Base;
 using MeuMenu.Domain.Utils;
 using MeuMenu.Domain.Validations.Usuario;
+using MeuMenu.Domain.ValueObjects;
 
 namespace MeuMenu.Domain.Services;
 
 public class UsuarioService : BaseService<Usuario>, IUsuarioService
 {
     private readonly IServicoDeCriptografia _servicoDeCriptografia;
+    private readonly IUsuarioRepository _repository;
 
     public UsuarioService(
         IUsuarioRepository repository, 
@@ -18,8 +21,11 @@ public class UsuarioService : BaseService<Usuario>, IUsuarioService
         IServicoDeCriptografia servicoDeCriptografia) 
             : base(repository, negocioService)
     {
+        _repository = repository;
         _servicoDeCriptografia = servicoDeCriptografia;
     }
+
+    public Task<RetornoPaginadoValueObject<Usuario>> Pesquisar(PesquisarUsuarioFiltro filtro) => _repository.Pesquisar(filtro);
 
     public override Task<Usuario> Adicionar(Usuario objeto)
     {

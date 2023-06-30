@@ -1,7 +1,10 @@
 ﻿using AutoMapper;
 using MeuMenu.Application.AppServices.Base;
+using MeuMenu.Application.Filtros;
 using MeuMenu.Application.Interfaces;
+using MeuMenu.Application.ViewModels.Base;
 using MeuMenu.Application.ViewModels.Usuario;
+using MeuMenu.Domain.Filtros;
 using MeuMenu.Domain.Interfaces.Notificador;
 using MeuMenu.Domain.Interfaces.Services;
 using MeuMenu.Domain.Interfaces.Utilitarios;
@@ -53,6 +56,14 @@ public class UsuarioAppService : BaseAppService, IUsuarioAppService
         _notificador.AdicionarNotificacao(new Notificacao("Usuário e/ou senha inválido(s)"));
         return null;
 
+    }
+
+    public async Task<RetornoPaginadoViewModel<UsuarioRetornoViewModel>> Pesquisar(
+        PesquisarUsuarioFiltroViewModel filtroVm)
+    {
+        var filtro = Mapper.Map<PesquisarUsuarioFiltro>(filtroVm);
+        var retorno = await _service.Pesquisar(filtro);
+        return Mapper.Map<RetornoPaginadoViewModel<UsuarioRetornoViewModel>>(retorno);
     }
 
     public async Task<ICollection<UsuarioRetornoViewModel>> BuscarTodos()
