@@ -9,5 +9,8 @@ public enum PerfilEnum
     Adimin = 1,
     [Description("Usuário comum")]
     UsuarioComum = 2,
-    Caixa
+    [Description("Caixa")]
+    Caixa = 3,
+    [Description("Cozinha")]
+    Cozinha = 4
 }
