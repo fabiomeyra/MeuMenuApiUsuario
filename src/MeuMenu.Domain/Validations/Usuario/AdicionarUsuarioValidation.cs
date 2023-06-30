@@ -20,7 +20,7 @@ public class AdicionarUsuarioValidation : AbstractValidator<Models.Usuario>
         RuleFor(x => x.UsuarioLogin)
             .MustAsync(async (x, _) =>
             {
-                var usuario = await _usuarioService.Obter(y => y.UsuarioLogin == x, y => y.UsuarioLogin);
+                var usuario = await _usuarioService.Obter(y => y.UsuarioLogin == x, y => y.UsuarioLogin, true);
                 return string.IsNullOrWhiteSpace(usuario);
             })
             .When(CamposObrigatoriosPreenchidos)

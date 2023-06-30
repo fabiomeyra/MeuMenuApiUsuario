@@ -12,6 +12,7 @@ using MeuMenu.Domain.Models;
 using MeuMenu.Domain.Notificador;
 using MeuMenu.Domain.Services.Base;
 using MeuMenu.Domain.UoW;
+using MeuMenu.Domain.Validations;
 
 namespace MeuMenu.Application.AppServices;
 
@@ -117,7 +118,7 @@ public class UsuarioAppService : BaseAppService, IUsuarioAppService
 
     private UsuarioRetornoViewModel RetornaSenhasNaoSaoIguais()
     {
-        _notificador.AdicionarNotificacao(new Notificacao("As senhas não conferem"));
+        _notificador.AdicionarNotificacao(new Notificacao(MensagensValidacaoResources.ConfirmarSenhaNaoConfere));
         return null!;
     }
 }
