@@ -1,4 +1,5 @@
 ﻿using FluentValidation;
+using MeuMenu.Domain.Enums;
 using MeuMenu.Domain.Interfaces.Services;
 
 namespace MeuMenu.Domain.Validations.Usuario;
@@ -20,7 +21,7 @@ public class AtualizarUsuarioValidation : AbstractValidator<Models.Usuario>
             .MustAsync(async (x, _) =>
             {
                 var usuario = await _usuarioService.Obter(y => y.UsuarioLogin == x.UsuarioLogin
-                    && y.UsuarioId != x.UsuarioId, y => y.UsuarioLogin);
+                    && y.UsuarioId != x.UsuarioId, y => y.UsuarioLogin, true);
                 return string.IsNullOrWhiteSpace(usuario);
             })
             .When(CamposObrigatoriosPreenchidos)
@@ -32,6 +33,10 @@ public class AtualizarUsuarioValidation : AbstractValidator<Models.Usuario>
         RuleFor(x => x.UsuarioId)
             .Must(x => x != Guid.Empty)
             .WithMessage(RetornaMensagemFormatado(MensagensValidacaoResources.DeveInformarIdentificadorAtualizar));
+
+        RuleFor(x => x.PerfilId)
+            .Must(x => x is > 0 && Enum.IsDefined(typeof(PerfilEnum), x))
+            .WithMessage(RetornaMensagemFormatado(MensagensValidacaoResources.DeveInformarPerfilUsuario));
 
         RuleFor(x => x.UsuarioNome)
             .Must(x => !string.IsNullOrWhiteSpace(x))
@@ -52,7 +57,9 @@ public class AtualizarUsuarioValidation : AbstractValidator<Models.Usuario>
             !string.IsNullOrWhiteSpace(usuario.UsuarioNome)
             && !string.IsNullOrWhiteSpace(usuario.UsuarioLogin)
             && !string.IsNullOrWhiteSpace(usuario.UsuarioSenha)
-            && usuario.UsuarioId != Guid.Empty;
+            && usuario.UsuarioId != Guid.Empty
+            && usuario.PerfilId is > 0
+            && Enum.IsDefined(typeof(PerfilEnum), usuario.PerfilId);
     }
 
     private string RetornaMensagemFormatado(string mensage) => $"(Usuário): {mensage}";

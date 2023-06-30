@@ -22,7 +22,7 @@ namespace MeuMenu.Domain.Validations {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class MensagensValidacaoResources {
+    public class MensagensValidacaoResources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace MeuMenu.Domain.Validations {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("MeuMenu.Domain.Validations.MensagensValidacaoResources", typeof(MensagensValidacaoResources).Assembly);
@@ -51,7 +51,7 @@ namespace MeuMenu.Domain.Validations {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -61,9 +61,18 @@ namespace MeuMenu.Domain.Validations {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Deve-se obrigatoriamente informar o campo senha.
+        /// </summary>
+        public static string ConfirmarSenhaNaoConfere {
+            get {
+                return ResourceManager.GetString("ConfirmarSenhaNaoConfere", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Deve-se obrigatoriamente informar o identificador do registro a ser atualizado.
         /// </summary>
-        internal static string DeveInformarIdentificadorAtualizar {
+        public static string DeveInformarIdentificadorAtualizar {
             get {
                 return ResourceManager.GetString("DeveInformarIdentificadorAtualizar", resourceCulture);
             }
@@ -72,7 +81,7 @@ namespace MeuMenu.Domain.Validations {
         /// <summary>
         ///   Looks up a localized string similar to Deve-se obrigatoriamente informar o identificador do registro a ser excluído.
         /// </summary>
-        internal static string DeveInformarIdentificadorExluir {
+        public static string DeveInformarIdentificadorExluir {
             get {
                 return ResourceManager.GetString("DeveInformarIdentificadorExluir", resourceCulture);
             }
@@ -81,7 +90,7 @@ namespace MeuMenu.Domain.Validations {
         /// <summary>
         ///   Looks up a localized string similar to Deve-se obrigatoriamente informar o perfil do usuário.
         /// </summary>
-        internal static string DeveInformarPerfilUsuario {
+        public static string DeveInformarPerfilUsuario {
             get {
                 return ResourceManager.GetString("DeveInformarPerfilUsuario", resourceCulture);
             }
@@ -90,7 +99,7 @@ namespace MeuMenu.Domain.Validations {
         /// <summary>
         ///   Looks up a localized string similar to O login informado já está cadastrado.
         /// </summary>
-        internal static string LoginJaExistente {
+        public static string LoginJaExistente {
             get {
                 return ResourceManager.GetString("LoginJaExistente", resourceCulture);
             }
@@ -99,7 +108,7 @@ namespace MeuMenu.Domain.Validations {
         /// <summary>
         ///   Looks up a localized string similar to Deve-se obrigatoriamente informar o campo login.
         /// </summary>
-        internal static string LoginObrigatorio {
+        public static string LoginObrigatorio {
             get {
                 return ResourceManager.GetString("LoginObrigatorio", resourceCulture);
             }
@@ -108,16 +117,16 @@ namespace MeuMenu.Domain.Validations {
         /// <summary>
         ///   Looks up a localized string similar to Deve-se obrigatoriamente informar o campo nome.
         /// </summary>
-        internal static string NomeObrigatorio {
+        public static string NomeObrigatorio {
             get {
                 return ResourceManager.GetString("NomeObrigatorio", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Deve-se obrigatoriamente informar o campo senha.
+        ///   Looks up a localized string similar to As senhas informada não conferem.
         /// </summary>
-        internal static string SenhaObrigatoria {
+        public static string SenhaObrigatoria {
             get {
                 return ResourceManager.GetString("SenhaObrigatoria", resourceCulture);
             }

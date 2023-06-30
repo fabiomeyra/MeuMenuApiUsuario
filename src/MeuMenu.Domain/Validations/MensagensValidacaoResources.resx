@@ -132,8 +132,11 @@
   <data name="LoginObrigatorio" xml:space="preserve">
     <value>Deve-se obrigatoriamente informar o campo login</value>
   </data>
-  <data name="SenhaObrigatoria" xml:space="preserve">
+  <data name="ConfirmarSenhaNaoConfere" xml:space="preserve">
     <value>Deve-se obrigatoriamente informar o campo senha</value>
+  </data>
+  <data name="SenhaObrigatoria" xml:space="preserve">
+    <value>As senhas informada não conferem</value>
   </data>
   <data name="LoginJaExistente" xml:space="preserve">
     <value>O login informado já está cadastrado</value>

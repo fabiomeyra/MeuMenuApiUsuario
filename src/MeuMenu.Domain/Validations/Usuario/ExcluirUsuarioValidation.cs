@@ -9,7 +9,7 @@ public class ExcluirUsuarioValidation : AbstractValidator<Models.Usuario>
     {
         RuleFor(x => x.UsuarioId)
             .Must(x => x != Guid.Empty)
-            .WithMessage(RetornaMensagemFormatado(MensagensValidacaoResources.DeveInformarIdentificadorAtualizar));
+            .WithMessage(RetornaMensagemFormatado(MensagensValidacaoResources.DeveInformarIdentificadorExluir));
     }
 
     private string RetornaMensagemFormatado(string mensage) => $"(Usuário): {mensage}";
